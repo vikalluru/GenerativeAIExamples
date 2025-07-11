@@ -170,6 +170,35 @@ phoenix serve
 
 Access dashboard at `http://localhost:6006` to monitor traces, performance, and costs.
 
+## Evaluation (Optional)
+
+Evaluate your predictive maintenance agent's performance using AIQ's built-in evaluation framework:
+
+### Simple Queries
+For standard data retrieval and basic analysis tasks:
+```bash
+aiq eval --config_file=configs/config-reasoning.yml "$@"
+```
+
+### Complex Reasoning + Plotting
+For queries requiring advanced reasoning and visualization capabilities:
+```bash
+aiq eval --config_file=configs/config-plotting-reasoning.yml "$@"
+```
+
+### Evaluation Results
+After running evaluation, find detailed results in:
+- **Main Evaluation**: `eval_output/` directory
+  - `rag_accuracy_output.json` - Answer accuracy scores
+  - `rag_groundedness_output.json` - Response grounding metrics  
+  - `rag_relevance_output.json` - Context relevance scores
+- **Plotting Evaluation**: `eval_output_plots/` directory
+  - `plot_accuracy_output.json` - Chart generation accuracy
+  - `plot_groundedness_output.json` - Plotting response metrics
+  - `plot_relevance_output.json` - Visualization relevance scores
+
+Results include average scores, individual query evaluations, and detailed reasoning for each assessment.
+
 ## Next Steps
 
 The agent provides a foundation for industrial AI applications. Planned enhancements include: memory layer for context retention, parallel tool execution for faster responses, action recommendation reasoning agent, real-time fault detection, and integration with NVIDIA's NV-Tesseract foundation models for improved accuracy.
