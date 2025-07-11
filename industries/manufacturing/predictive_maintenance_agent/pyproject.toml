@@ -8,6 +8,14 @@ version = "0.1.0"
 dependencies = [
   "aiqtoolkit[profiling, langchain, telemetry]",
   "pydantic ~= 2.10.0, <2.11.0",
+  "vanna",
+  "chromadb",
+  "bokeh",
+  "langchain_nvidia",
+  "tqdm",
+  "numpy",
+  "pandas",
+  "joblib",
 ]
 requires-python = ">=3.11,<3.13"
 description = "Predictive maintenance workflow using AIQ"
