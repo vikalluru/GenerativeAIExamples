@@ -358,6 +358,39 @@ def initVanna(vn):
     vn.train(question="In the dataset FD004, how many units have RUL equal to 10 and what are their unit numbers?", 
     sql="SELECT COUNT(*) as count, GROUP_CONCAT(unit_number) as unit_numbers FROM rul_data WHERE dataset = 'FD004' AND RUL = 10")
     
+    # CRITICAL: Add training examples for unit counting vs record counting
+    # "How many units" questions should use COUNT(DISTINCT unit_number)
+    vn.train(question="How many units have operational_setting_3 equal to 100 in dataset train_FD001?", 
+    sql="SELECT COUNT(DISTINCT unit_number) FROM training_data WHERE dataset = 'FD001' AND operational_setting_3 = 100")
+    vn.train(question="How many units have operational_setting_3 equal to 100 in dataset FD001?", 
+    sql="SELECT COUNT(DISTINCT unit_number) FROM training_data WHERE dataset = 'FD001' AND operational_setting_3 = 100")
+    vn.train(question="How many units have operational_setting_1 equal to 20 in dataset train_FD002?", 
+    sql="SELECT COUNT(DISTINCT unit_number) FROM training_data WHERE dataset = 'FD002' AND operational_setting_1 = 20")
+    vn.train(question="How many units have operational_setting_2 greater than 0.8 in dataset train_FD003?", 
+    sql="SELECT COUNT(DISTINCT unit_number) FROM training_data WHERE dataset = 'FD003' AND operational_setting_2 > 0.8")
+    vn.train(question="How many units have sensor_measurement_1 greater than 500 in dataset test_FD001?", 
+    sql="SELECT COUNT(DISTINCT unit_number) FROM test_data WHERE dataset = 'FD001' AND sensor_measurement_1 > 500")
+    vn.train(question="How many units have sensor_measurement_2 less than 600 in dataset test_FD002?", 
+    sql="SELECT COUNT(DISTINCT unit_number) FROM test_data WHERE dataset = 'FD002' AND sensor_measurement_2 < 600")
+    vn.train(question="Count the number of units with operational_setting_3 equal to 60 in dataset FD002", 
+    sql="SELECT COUNT(DISTINCT unit_number) FROM training_data WHERE dataset = 'FD002' AND operational_setting_3 = 60")
+    vn.train(question="How many distinct units have operational_setting_1 equal to 35 in dataset FD003?", 
+    sql="SELECT COUNT(DISTINCT unit_number) FROM training_data WHERE dataset = 'FD003' AND operational_setting_1 = 35")
+    
+    # "How many records" questions should use COUNT(*)
+    vn.train(question="How many records have operational_setting_3 equal to 100 in dataset train_FD001?", 
+    sql="SELECT COUNT(*) FROM training_data WHERE dataset = 'FD001' AND operational_setting_3 = 100")
+    vn.train(question="How many data points have operational_setting_3 equal to 100 in dataset FD001?", 
+    sql="SELECT COUNT(*) FROM training_data WHERE dataset = 'FD001' AND operational_setting_3 = 100")
+    vn.train(question="How many measurements have sensor_measurement_1 greater than 500 in dataset test_FD001?", 
+    sql="SELECT COUNT(*) FROM test_data WHERE dataset = 'FD001' AND sensor_measurement_1 > 500")
+    vn.train(question="How many entries have operational_setting_2 less than 0.6 in dataset train_FD002?", 
+    sql="SELECT COUNT(*) FROM training_data WHERE dataset = 'FD002' AND operational_setting_2 < 0.6")
+    vn.train(question="Count all records with operational_setting_1 equal to 20 in dataset FD002", 
+    sql="SELECT COUNT(*) FROM training_data WHERE dataset = 'FD002' AND operational_setting_1 = 20")
+    vn.train(question="How many rows have sensor_measurement_3 greater than 1000 in dataset test_FD003?", 
+    sql="SELECT COUNT(*) FROM test_data WHERE dataset = 'FD003' AND sensor_measurement_3 > 1000")
+    
     # Add training examples for train_FD naming convention (train_FD001 -> FD001)
     vn.train(question="In dataset train_FD001, what was the 3rd operational setting at time 20 for unit_number 1", 
     sql="SELECT operational_setting_3 FROM training_data WHERE dataset = 'FD001' AND unit_number = 1 AND time_in_cycles = 20")
