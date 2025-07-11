@@ -33,7 +33,7 @@ functions:
     llm_name: sql_llm
     embedding_name: vanna_embedder
     vector_store_path: "${PWD_PATH}/database"
-    db_path: "${PWD_PATH}/database/nasa_turbo.db"
+    db_path: "${PWD_PATH}/PredM_db/nasa_turbo.db"
     output_folder: "${PWD_PATH}/output_data"
   plot_distribution:
     _type: plot_distribution_tool
@@ -47,8 +47,17 @@ functions:
     tool_names: [plot_line_chart, plot_distribution]
     verbose: true
     handle_tool_errors: true
-    description: "Use this agent to generate plots from the retrieved SQL data. Provide a description of the plot required along with the JSON file path containing the SQL output in the input message.
-    for example: Plot the sensor_measurement_1 vs time_in_cycles for unit 1 from the file ${PWD_PATH}/output_data/sql_output.json"
+    description: "Use this agent to generate plots from the retrieved SQL data. IMPORTANT: Choose the correct plot type based on the data:
+    
+    - For TIME-SERIES DATA (anything vs time_in_cycles, time, or temporal data): ALWAYS use plot_line_chart
+    - For DISTRIBUTION analysis (histogram of values): use plot_distribution
+    
+    Examples:
+    - 'Plot operational_setting_1 vs time_in_cycles' → use plot_line_chart
+    - 'Plot sensor_measurement_1 vs time_in_cycles' → use plot_line_chart  
+    - 'Plot distribution of RUL values' → use plot_distribution
+    
+    Provide the plot description and JSON file path in the input message."
 
 workflow:
   _type: react_agent

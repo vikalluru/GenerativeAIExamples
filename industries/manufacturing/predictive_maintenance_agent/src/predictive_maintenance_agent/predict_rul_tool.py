@@ -15,12 +15,13 @@ from aiq.data_models.function import FunctionBaseConfig
 
 logger = logging.getLogger(__name__)
 
-def verify_json_path(file_path: str) -> str:
+def verify_json_path(file_path: str, output_folder: str = None) -> str:
     """
     Verify that the input is a valid path to a JSON file.
     
     Args:
         file_path (str): Path to verify
+        output_folder (str): Optional output folder to check if file not found in current path
         
     Returns:
         str: Verified file path
@@ -35,17 +36,29 @@ def verify_json_path(file_path: str) -> str:
     
     if not file_path.lower().endswith('.json'):
         return "Input must be a path to a JSON file (ending with .json)"
-        
-    if not os.path.exists(file_path):
+    
+    # First check if file exists at the given path
+    if os.path.exists(file_path):
+        actual_path = file_path
+    elif output_folder and not os.path.isabs(file_path):
+        # If file not found and we have output_folder, check there
+        # Handle both ./filename and filename cases
+        filename = os.path.basename(file_path)
+        potential_path = os.path.join(output_folder, filename)
+        if os.path.exists(potential_path):
+            actual_path = potential_path
+        else:
+            return f"JSON file not found at path: {file_path} or {potential_path}"
+    else:
         return f"JSON file not found at path: {file_path}"
         
     try:
-        with open(file_path, 'r') as f:
+        with open(actual_path, 'r') as f:
             json.load(f)  # Verify file contains valid JSON
     except json.JSONDecodeError:
-        return f"File at {file_path} does not contain valid JSON data"
+        return f"File at {actual_path} does not contain valid JSON data"
         
-    return file_path
+    return actual_path
 
 class PredictRulToolConfig(FunctionBaseConfig, name="predict_rul_tool"):
     """
@@ -164,7 +177,7 @@ async def predict_rul_tool(
         Process the input message and generate RUL predictions using trained models.
         """
         logger.info(f"Input message: {json_file_path}")
-        data_json_path = verify_json_path(json_file_path)
+        data_json_path = verify_json_path(json_file_path, config.output_folder)
         try:
             predictions, output_filepath = predict_rul_from_data(
                 data_json_path=data_json_path,

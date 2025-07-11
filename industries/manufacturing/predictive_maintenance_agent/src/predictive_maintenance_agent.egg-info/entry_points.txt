@@ -1,0 +1,2 @@
+[aiq.components]
+predictive_maintenance_agent = predictive_maintenance_agent.register

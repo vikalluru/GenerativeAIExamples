@@ -1,0 +1,198 @@
+{
+  "average_score": 0.890625,
+  "eval_output_items": [
+    {
+      "id": 1,
+      "score": 1.0,
+      "reasoning": {
+        "user_input": "What is the remaining useful life (RUL) of unit_number 59 in dataset FD001",
+        "reference": "114 ",
+        "response": "The remaining useful life (RUL) of unit_number 59 in dataset FD001 is 114.",
+        "retrieved_contexts": [
+          "The remaining useful life (RUL) of unit_number 59 in dataset FD001 is 114.\n\nThe SQL query executed was: `SELECT RUL FROM rul_data WHERE unit_number = 59 AND dataset = 'FD001'`.\n\nThis query returned a single value indicating the RUL for the specified unit and dataset."
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "score": 1.0,
+      "reasoning": {
+        "user_input": "What is the RUL of unit_number 20 in dataset FD001",
+        "reference": "16 ",
+        "response": "The RUL of unit_number 20 in dataset FD001 is 16.",
+        "retrieved_contexts": [
+          "The RUL (Remaining Useful Life) of unit 20 in dataset FD001 is 16.\n\nHere is the SQL query that was executed:\n```sql\nSELECT RUL FROM rul_data WHERE unit_number = 20 AND dataset = 'FD001'\n```\n\nThis query directly provided the RUL value for the specified unit and dataset."
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "score": 1.0,
+      "reasoning": {
+        "user_input": "How many units have RUL of 100 or more in dataset FD003",
+        "reference": "33 ",
+        "response": "There are 33 units in dataset FD003 that have a Remaining Useful Life (RUL) of 100 or more.",
+        "retrieved_contexts": [
+          "The SQL query executed was: `SELECT COUNT(*) FROM rul_data WHERE dataset = 'FD003' AND RUL >= 100`\n\nThe result is that there are 33 units in dataset FD003 that have a Remaining Useful Life (RUL) of 100 or more."
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "score": 1.0,
+      "reasoning": {
+        "user_input": "How many units have RUL of 50 or less in dataset FD002",
+        "reference": "88 ",
+        "response": "There are 88 units with a Remaining Useful Life (RUL) of 50 or less in the FD002 dataset.",
+        "retrieved_contexts": [
+          "The SQL query executed was: `SELECT COUNT(*) FROM rul_data WHERE dataset = 'FD002' AND RUL <= 50`\n\nThe result is that there are 88 units with a Remaining Useful Life (RUL) of 50 or less in the FD002 dataset.\n\nThis is a simple query with a single value, so no file creation is necessary.\n\n📁 Data has been saved to: /Users/vmodak/Documents/Projects_Tutorials_Demos/PredictiveMaintenance_AIQ/GenerativeAIExamples/industries/manufacturing/predictive_maintenance_agent/output_data/count_the_number_of_units_with_results.json\n📊 File contains 1 rows with columns: COUNT(*)"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "score": 1.0,
+      "reasoning": {
+        "user_input": "Report the unit_number of the units that have RUL equal to 155 in FD002",
+        "reference": "6, 141, 165 ",
+        "response": "The unit numbers of the units that have RUL equal to 155 in the FD002 dataset are 6, 141, and 165.",
+        "retrieved_contexts": [
+          "The SQL query executed was: `SELECT unit_number FROM rul_data WHERE dataset = 'FD002' AND RUL = 155`\n\nThe query found 3 units with RUL equal to 155 in the FD002 dataset. The unit numbers are 6, 141, and 165.\n\nHere are the unit numbers explicitly:\n- 6\n- 141\n- 165\n\nThese are all the unit numbers that meet the criteria specified in the query."
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "score": 0.0,
+      "reasoning": {
+        "user_input": "In the dataset FD004, how many units have RUL equal to 10 and what are their unit numbers?",
+        "reference": "4 units; unit numbers: 40, 82, 174, 184",
+        "response": "I seem to be having a problem.",
+        "retrieved_contexts": []
+      }
+    },
+    {
+      "id": 7,
+      "score": 1.0,
+      "reasoning": {
+        "user_input": "In dataset train_FD004, what was the operational_setting_3 at time_in_cycles 20 for unit_number 107",
+        "reference": "100 ",
+        "response": "The operational_setting_3 at time_in_cycles 20 for unit_number 107 in dataset FD004 is 100.0.",
+        "retrieved_contexts": [
+          "The operational_setting_3 at time_in_cycles 20 for unit_number 107 in dataset FD004 is 100.0.\n\nThis result was obtained from executing the SQL query:\n```sql\nSELECT operational_setting_3 FROM training_data WHERE dataset = 'FD004' AND unit_number = 107 AND time_in_cycles = 20\n```"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "score": 0.75,
+      "reasoning": {
+        "user_input": "In dataset train_FD004, what was the 3rd operational setting at time 20 for unit_number 107",
+        "reference": "100 ",
+        "response": "No data found for the 3rd operational setting at time 20 for unit_number 107 in dataset train_FD004. Please verify the dataset and parameters.",
+        "retrieved_contexts": [
+          "No data found for the generated SQL: SELECT operational_setting_3 FROM training_data WHERE dataset = 'train_FD004' AND unit_number = 107 AND time_in_cycles = 20",
+          "No data found for the generated SQL: SELECT operational_setting_3 FROM training_data WHERE dataset = 'train_FD004' AND unit_number = 107 AND time_in_cycles = 20"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "score": 0.75,
+      "reasoning": {
+        "user_input": "In dataset test_FD002, what are the values of the three operational setting for unit_number 56 at time_in_cycles 10",
+        "reference": "10.0026, 0.25, 100 ",
+        "response": "The values of the three operational settings for unit_number 56 at time_in_cycles 10 in dataset test_FD002 are:\n- Operational Setting 1: 10.0026\n- Operational Setting 2: 0.25\n- Operational Setting 3: 100.0",
+        "retrieved_contexts": [
+          "The SQL query executed was:\n\n```sql\nSELECT operational_setting_1, operational_setting_2, operational_setting_3 \nFROM test_data \nWHERE dataset = 'FD002' AND unit_number = 56 AND time_in_cycles = 10\n```\n\nThe query results show the operational settings for unit 56 at 10 cycles in the dataset FD002. Here are the settings:\n\n- Operational Setting 1: 10.0026\n- Operational Setting 2: 0.25\n- Operational Setting 3: 100.0\n\nThese values provide the specific operational settings for the specified unit and cycle in the dataset."
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "score": 1.0,
+      "reasoning": {
+        "user_input": "In dataset test_FD003, what is the value of sensor_measurement_4 for unit_number 25 at time_in_cycles 20",
+        "reference": "1409.26 ",
+        "response": "The value of `sensor_measurement_4` for `unit_number` 25 at `time_in_cycles` 20 in dataset `test_FD003` is 1409.26.",
+        "retrieved_contexts": [
+          "The value of `sensor_measurement_4` for `unit_number` 25 at `time_in_cycles` 20 in dataset `test_FD003` is 1409.26.\n\nThis result was obtained from executing the SQL query:\n```sql\nSELECT sensor_measurement_4 FROM test_data WHERE dataset = 'FD003' AND unit_number = 25 AND time_in_cycles = 20\n```"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "score": 1.0,
+      "reasoning": {
+        "user_input": "How many units have operational_setting_3 equal to 100 in dataset train_FD001 at time_in_cycles 40?",
+        "reference": "100 ",
+        "response": "There are 100 units in the dataset `train_FD001` at `time_in_cycles` 40 where `operational_setting_3` is equal to 100.",
+        "retrieved_contexts": [
+          "The SQL query executed was:\n\n```sql\nSELECT COUNT(*) FROM training_data WHERE dataset = 'FD001' AND operational_setting_3 = 100 AND time_in_cycles = 40\n```\n\nThe result indicates that there are 100 units in the dataset `train_FD001` at `time_in_cycles` 40 where `operational_setting_3` is equal to 100.\n\nThis is a simple query with a single value, so no file creation is necessary.\n\n📁 Data has been saved to: /Users/vmodak/Documents/Projects_Tutorials_Demos/PredictiveMaintenance_AIQ/GenerativeAIExamples/industries/manufacturing/predictive_maintenance_agent/output_data/input_question_in_english_how__results.json\n📊 File contains 1 rows with columns: COUNT(*)"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "score": 1.0,
+      "reasoning": {
+        "user_input": "How many units have operational_setting_3 equal to 100 in dataset train_FD001?",
+        "reference": "100 ",
+        "response": "There are 20,631 units in the dataset `train_FD001` where `operational_setting_3` is equal to 100.",
+        "retrieved_contexts": [
+          "The SQL query executed was: `SELECT COUNT(*) FROM training_data WHERE dataset = 'FD001' AND operational_setting_3 = 100`\n\nThe result is that there are 20,631 units in the dataset `train_FD001` where `operational_setting_3` is equal to 100.\n\nThis is a simple query with a single value, so no file creation is necessary.\n\n📁 Data has been saved to: /Users/vmodak/Documents/Projects_Tutorials_Demos/PredictiveMaintenance_AIQ/GenerativeAIExamples/industries/manufacturing/predictive_maintenance_agent/output_data/input_question_in_english_how__results.json\n📊 File contains 1 rows with columns: COUNT(*)"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "score": 1.0,
+      "reasoning": {
+        "user_input": "In dataset train_FD003, what was sensor_measurement_20 and sensor_measurement_21 for unit 1 at time_in_cycles 10",
+        "reference": "38.94, 23.4781 ",
+        "response": "For unit 1 at time_in_cycles 10 in dataset FD003, the sensor measurements are:\n- `sensor_measurement_20`: 38.94\n- `sensor_measurement_21`: 23.4781",
+        "retrieved_contexts": [
+          "The SQL query executed was:\n\n```sql\nSELECT sensor_measurement_20, sensor_measurement_21 FROM training_data WHERE dataset = 'FD003' AND unit_number = 1 AND time_in_cycles = 10\n```\n\nFor unit 1 at time_in_cycles 10 in dataset FD003, the sensor measurements are as follows:\n- `sensor_measurement_20`: 38.94\n- `sensor_measurement_21`: 23.4781\n\nThese values provide the specific sensor readings for the given unit and cycle time in the specified dataset."
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "score": 1.0,
+      "reasoning": {
+        "user_input": "Using the data in test_FD002, predict the remaining useful life of unit_number 10 at time_in_cycles 84",
+        "reference": "79 ",
+        "response": "The predicted remaining useful life (RUL) for unit_number 10 at time_in_cycles 84 is 83.67 cycles.",
+        "retrieved_contexts": [
+          "The SQL query executed was:\n\n```sql\nSELECT sensor_measurement_1, sensor_measurement_2, sensor_measurement_3, sensor_measurement_4, sensor_measurement_5, sensor_measurement_6, sensor_measurement_7, sensor_measurement_8, sensor_measurement_9, sensor_measurement_10, sensor_measurement_11, sensor_measurement_12, sensor_measurement_13, sensor_measurement_14, sensor_measurement_15, sensor_measurement_16, sensor_measurement_17, sensor_measurement_18, sensor_measurement_19, sensor_measurement_20, sensor_measurement_21 \nFROM test_data \nWHERE unit_number = 10 AND time_in_cycles = 84 AND dataset = 'FD002'\n```\n\nThe query returned 1 row with 21 sensor measurements for unit number 10 at time_in_cycles 84 from the dataset FD002. Given the complexity and number of columns, it is recommended to save this data to a JSON file for easier handling and reference.\n\n**Descriptive Filename Suggestion:** `sensor_data_unit_10_time_84_FD002.json`\n\nHere is a summary of the data:\n\n- **sensor_measurement_1:** 491.19\n- **sensor_measurement_2:** 607.35\n- **sensor_measurement_3:** 1485.76\n- **sensor_measurement_4:** 1251.66\n- **sensor_measurement_5:** 9.35\n- **sensor_measurement_6:** 13.65\n- **sensor_measurement_7:** 333.84\n- **sensor_measurement_8:** 2324.01\n- **sensor_measurement_9:** 8725.44\n- **sensor_measurement_10:** 1.08\n- **sensor_measurement_11:** 44.35\n- **sensor_measurement_12:** 315.28\n- **sensor_measurement_13:** 2388.17\n- **sensor_measurement_14:** 8064.17\n- **sensor_measurement_15:** 9.2522\n- **sensor_measurement_16:** 0.02\n- **sensor_measurement_17:** 365\n- **sensor_measurement_18:** 2324\n- **sensor_measurement_19:** 100.0\n- **sensor_measurement_20:** 24.51\n- **sensor_measurement_21:** 14.6504\n\nThis data provides detailed sensor measurements for the specified unit and time cycle, which can be useful for further analysis or reporting.\n\n📁 Data has been saved to: /Users/vmodak/Documents/Projects_Tutorials_Demos/PredictiveMaintenance_AIQ/GenerativeAIExamples/industries/manufacturing/predictive_maintenance_agent/output_data/get_sensor_measurements_for_un_results.json\n📊 File contains 1 rows with columns: sensor_measurement_1, sensor_measurement_2, sensor_measurement_3, sensor_measurement_4, sensor_measurement_5, sensor_measurement_6, sensor_measurement_7, sensor_measurement_8, sensor_measurement_9, sensor_measurement_10, sensor_measurement_11, sensor_measurement_12, sensor_measurement_13, sensor_measurement_14, sensor_measurement_15, sensor_measurement_16, sensor_measurement_17, sensor_measurement_18, sensor_measurement_19, sensor_measurement_20, sensor_measurement_21",
+          "RUL predictions generated successfully! 📊\n\n**Prediction Summary:**\n- **Total predictions:** 1\n- **Average RUL:** 83.67 cycles\n- **Minimum RUL:** 83.67 cycles  \n- **Maximum RUL:** 83.67 cycles\n- **Standard Deviation:** 0.00 cycles\n\n**Results saved to:** /Users/vmodak/Documents/Projects_Tutorials_Demos/PredictiveMaintenance_AIQ/GenerativeAIExamples/industries/manufacturing/predictive_maintenance_agent/output_data/get_sensor_measurements_for_un_results.json\n\nThe predictions have been added to the original dataset with column name 'predicted_RUL'. The original JSON file has been updated with the RUL predictions.\nAll columns from the original dataset have been preserved, and the predicted RUL column has been renamed to 'predicted_RUL' and the actual RUL column has been renamed to 'actual_RUL'."
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "score": 0.75,
+      "reasoning": {
+        "user_input": "Given the data in test_FD003, predict the RUL of unit_number 30",
+        "reference": "89 ",
+        "response": "The predicted RUL for unit_number 30 in the test_FD003 dataset is available in the JSON file located at /Users/vmodak/Documents/Projects_Tutorials_Demos/PredictiveMaintenance_AIQ/GenerativeAIExamples/industries/manufacturing/predictive_maintenance_agent/output_data/get_sensor_measurements_for_un_results.json. The summary statistics for the predictions are as follows:\n- Average RUL: 108.74 cycles\n- Minimum RUL: 79.36 cycles\n- Maximum RUL: 123.95 cycles\n- Standard Deviation: 9.49 cycles",
+        "retrieved_contexts": [
+          "The SQL query executed was:\n\n```sql\nSELECT sensor_measurement_1, sensor_measurement_2, sensor_measurement_3, sensor_measurement_4, sensor_measurement_5, sensor_measurement_6, sensor_measurement_7, sensor_measurement_8, sensor_measurement_9, sensor_measurement_10, sensor_measurement_11, sensor_measurement_12, sensor_measurement_13, sensor_measurement_14, sensor_measurement_15, sensor_measurement_16, sensor_measurement_17, sensor_measurement_18, sensor_measurement_19, sensor_measurement_20, sensor_measurement_21 \nFROM test_data \nWHERE unit_number = 30 AND dataset = 'FD003'\n```\n\nThe query retrieved 333 rows of sensor measurements for unit 30 in the 'FD003' dataset. Given the large number of rows and columns, it is best to save this data to a JSON file for further analysis.\n\n**Suggested filename:** `sensor_data_unit_30_FD003.json`\n\nThis file will contain all the sensor measurements for unit 30, which can be used for detailed analysis or visualization.\n\n📁 Data has been saved to: /Users/vmodak/Documents/Projects_Tutorials_Demos/PredictiveMaintenance_AIQ/GenerativeAIExamples/industries/manufacturing/predictive_maintenance_agent/output_data/get_sensor_measurements_for_un_results.json\n📊 File contains 333 rows with columns: sensor_measurement_1, sensor_measurement_2, sensor_measurement_3, sensor_measurement_4, sensor_measurement_5, sensor_measurement_6, sensor_measurement_7, sensor_measurement_8, sensor_measurement_9, sensor_measurement_10, sensor_measurement_11, sensor_measurement_12, sensor_measurement_13, sensor_measurement_14, sensor_measurement_15, sensor_measurement_16, sensor_measurement_17, sensor_measurement_18, sensor_measurement_19, sensor_measurement_20, sensor_measurement_21",
+          "RUL predictions generated successfully! 📊\n\n**Prediction Summary:**\n- **Total predictions:** 333\n- **Average RUL:** 108.74 cycles\n- **Minimum RUL:** 79.36 cycles  \n- **Maximum RUL:** 123.95 cycles\n- **Standard Deviation:** 9.49 cycles\n\n**Results saved to:** /Users/vmodak/Documents/Projects_Tutorials_Demos/PredictiveMaintenance_AIQ/GenerativeAIExamples/industries/manufacturing/predictive_maintenance_agent/output_data/get_sensor_measurements_for_un_results.json\n\nThe predictions have been added to the original dataset with column name 'predicted_RUL'. The original JSON file has been updated with the RUL predictions.\nAll columns from the original dataset have been preserved, and the predicted RUL column has been renamed to 'predicted_RUL' and the actual RUL column has been renamed to 'actual_RUL'."
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "score": 1.0,
+      "reasoning": {
+        "user_input": "For dataset test_FD004, what is the remaining useful life of unit 60",
+        "reference": "139 ",
+        "response": "The remaining useful life (RUL) of unit 60 in dataset FD004 is 139.",
+        "retrieved_contexts": [
+          "The remaining useful life (RUL) of unit 60 in dataset FD004 is 139.\n\nThe SQL query executed was: `SELECT RUL FROM rul_data WHERE unit_number = 60 AND dataset = 'FD004'`.\n\nThis query directly provided the RUL value for the specified unit and dataset."
+        ]
+      }
+    }
+  ]
+}

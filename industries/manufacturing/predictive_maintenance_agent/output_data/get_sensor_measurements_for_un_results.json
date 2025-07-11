@@ -1,0 +1,26 @@
+[
+  {
+    "sensor_measurement_1": 491.19,
+    "sensor_measurement_2": 607.35,
+    "sensor_measurement_3": 1485.76,
+    "sensor_measurement_4": 1251.66,
+    "sensor_measurement_5": 9.35,
+    "sensor_measurement_6": 13.65,
+    "sensor_measurement_7": 333.84,
+    "sensor_measurement_8": 2324.01,
+    "sensor_measurement_9": 8725.44,
+    "sensor_measurement_10": 1.08,
+    "sensor_measurement_11": 44.35,
+    "sensor_measurement_12": 315.28,
+    "sensor_measurement_13": 2388.17,
+    "sensor_measurement_14": 8064.17,
+    "sensor_measurement_15": 9.2522,
+    "sensor_measurement_16": 0.02,
+    "sensor_measurement_17": 365,
+    "sensor_measurement_18": 2324,
+    "sensor_measurement_19": 100.0,
+    "sensor_measurement_20": 24.51,
+    "sensor_measurement_21": 14.6504,
+    "predicted_RUL": 83.6747055053711
+  }
+]
