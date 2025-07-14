@@ -29,7 +29,7 @@ Uses the **NASA Turbofan Engine Degradation Simulation Dataset (C-MAPSS)** with:
 The system uses a **unified master configuration** that intelligently handles both text-based queries and visualization requests through:
 
 - **Reasoning Agent**: Classifies queries and creates execution plans
-- **Unified Assistant**: Comprehensive data analysis with intelligent tool routing
+- **Unified Assistant**: Comprehensive data analysis with tool routing
 - **6 Specialized Tools**: 
   - `sql_retriever`: Database queries using NIM LLM
   - `predict_rul`: XGBoost-based RUL prediction
@@ -177,20 +177,20 @@ Access dashboard at `http://localhost:6006` to monitor traces, performance, and 
 
 ## Evaluation
 
-### Master Configuration Evaluation
-The system uses a unified master configuration for comprehensive evaluation across all query types:
+### Configuration
+There are two types of evaluation configs available
 
 ```bash
-# Full comprehensive evaluation (23 queries)
+# Default full evaluation (querying+plotting) (23 queries)
 aiq eval --config_file configs/config-master.yml
 
-# Template evaluation for testing (16 queries)
-aiq eval --config_file configs/config-master.yml --dataset eval_data/eval_set.json
+# Basic evaluation for testing (16 simple queries)
+aiq eval --config_file configs/config-master.yml --dataset eval_data/eval_set_simple.json
 ```
 
 ### Evaluation Datasets
-- **Template Dataset** (`eval_data/eval_set.json`): **16 focused queries** for quick testing
-- **Master Dataset** (`eval_data/eval_set_master.json`): **23 comprehensive queries** for full evaluation
+- **Template Dataset** (`eval_data/eval_set.json`): **16 simple queries** for quick testing
+- **Master Dataset** (`eval_data/eval_set_master.json`): **23 text+plotting queries** for full evaluation
 
 The master evaluation dataset contains **23 diverse queries**:
 - **16 Text Queries**: Simple lookups, aggregations, and predictions
@@ -225,7 +225,7 @@ We largely achieve very good semantic and factual accuracy for the small eval se
 - **Active Config**: `configs/config-master.yml` (unified master configuration)
 - **Evaluation Data**: 
   - `eval_data/eval_set.json` (16-query template for quick testing)
-  - `eval_data/eval_set_master.json` (23-query comprehensive evaluation)
+  - `eval_data/eval_set_master.json` (23-query full evaluation)
 - **Generated Outputs**: `eval_output/` and `output_data/` for system outputs
 
 
