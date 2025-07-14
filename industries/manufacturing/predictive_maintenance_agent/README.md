@@ -216,50 +216,25 @@ After evaluation, detailed results are available in:
 - `eval_output/rag_relevance_output.json` - Context relevance scores
 - `eval_output/workflow_profiling_report.txt` - Performance analysis
 
-### Performance Insights
-The unified master system achieves:
-- **87% Overall Accuracy** on the evaluation dataset
-- **100% Accuracy** on simple RUL lookups (fixed query classification)
-- **Robust Tool Selection** for appropriate query types
-- **Consistent Visualization** generation for plotting requests
+### Eval Results Summary
+We largely achieve very good semantic and factual accuracy for the small eval set in the eval_set_master.json. Some issues that we observed pertained to predictive model accuracy, inconsistent API call reliability, both of which are unrelated to the agentic framework itself.
 
-## Key Features
-
-### Intelligent Query Classification
-- **RUL Query Detection**: Distinguishes between database lookups and ML predictions
-- **Tool Selection**: Automatically chooses appropriate tools for each query type
-- **Error Prevention**: Avoids incorrect tool usage through explicit classification
-
-### Unified Experience
-- **Single Configuration**: One config handles all query types
-- **Consistent Interface**: Same API for text, prediction, and visualization queries
-- **Seamless Integration**: Works with both web interface and evaluation scripts
-
-### Comprehensive Coverage
-- **All Query Types**: Simple lookups, complex predictions, and visualizations
-- **Complete Evaluation**: Tests text processing and plotting capabilities
-- **Production Ready**: Optimized for real-world deployment
-
-## Development Notes
+## Notes
 
 ### File Organization
 - **Active Config**: `configs/config-master.yml` (unified master configuration)
 - **Evaluation Data**: 
   - `eval_data/eval_set.json` (16-query template for quick testing)
   - `eval_data/eval_set_master.json` (23-query comprehensive evaluation)
-- **Backup Files**: `backup/` directory contains old configs and temporary files
 - **Generated Outputs**: `eval_output/` and `output_data/` for system outputs
 
-### System Architecture
-The master system consolidates previous separate configurations into a single, intelligent agent capable of handling the full spectrum of predictive maintenance queries while maintaining high accuracy and appropriate tool selection.
 
-## Next Steps
+### Next Steps
 
 The agent provides a foundation for industrial AI applications. Planned enhancements include: memory layer for context retention, parallel tool execution for faster responses, action recommendation reasoning agent, real-time fault detection, and integration with NVIDIA's NV-Tesseract foundation models for improved accuracy.
 
----
 
-**Resources:**
+### Resources
 - [NVIDIA AIQ Toolkit Documentation](https://docs.nvidia.com/aiq-toolkit/)
 - [Phoenix Observability](https://phoenix.arize.com/)
 - [NV-Tesseract Models](https://developer.nvidia.com/blog/new-nvidia-nv-tesseract-time-series-models-advance-dataset-processing-and-anomaly-detection/)
