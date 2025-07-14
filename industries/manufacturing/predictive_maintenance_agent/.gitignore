@@ -49,11 +49,31 @@ venv.bak/
 .idea/
 *.swp
 *.swo
-*~
 
-# Database files
-*.db
+# Local backup files (for local consumption only)
+backup/
+../backup/
+../../backup/
+../../../backup/
+
+# Generated output files (except .gitkeep)
+output_data/*
+!output_data/.gitkeep
+eval_output/*
+!eval_output/.gitkeep
+
+# Database files and dynamic folders
+database/*/
+!database/.gitkeep
+database_backup*/
 *.sqlite3
+*.db
+*.log
 
-# Log files
-*.log 
+# Temporary and debug files
+debug_*.py
+test_*.py
+analyze_*.py
+*_temp.py
+*.tmp
+*.temp 
