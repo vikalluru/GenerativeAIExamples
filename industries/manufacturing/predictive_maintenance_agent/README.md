@@ -147,6 +147,19 @@ Retrieve time in cycles, all sensor measurements and RUL value for engine unit 2
 In dataset train_FD004, plot sensor_measurement1 vs time_in_cycles for unit_number 107
 ```
 
+### Sample Visualization Outputs
+
+The system generates interactive plots for various visualization queries:
+
+**Time-Series Plot Example**
+![Time-series visualization](imgs/test_prompt_1.png)
+
+**Distribution Plot Example**
+![Distribution visualization](imgs/test_prompt_2.png)
+
+**Comparison Plot Example**
+![Comparison visualization](imgs/test_prompt_3.png)
+
 ## Observability (Optional)
 
 Monitor your system with Phoenix:
