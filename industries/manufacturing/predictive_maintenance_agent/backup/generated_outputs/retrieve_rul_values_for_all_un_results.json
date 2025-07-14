@@ -1,0 +1,402 @@
+[
+    {
+        "unit_number": 1,
+        "RUL": 112
+    },
+    {
+        "unit_number": 2,
+        "RUL": 98
+    },
+    {
+        "unit_number": 3,
+        "RUL": 69
+    },
+    {
+        "unit_number": 4,
+        "RUL": 82
+    },
+    {
+        "unit_number": 5,
+        "RUL": 91
+    },
+    {
+        "unit_number": 6,
+        "RUL": 93
+    },
+    {
+        "unit_number": 7,
+        "RUL": 91
+    },
+    {
+        "unit_number": 8,
+        "RUL": 95
+    },
+    {
+        "unit_number": 9,
+        "RUL": 111
+    },
+    {
+        "unit_number": 10,
+        "RUL": 96
+    },
+    {
+        "unit_number": 11,
+        "RUL": 97
+    },
+    {
+        "unit_number": 12,
+        "RUL": 124
+    },
+    {
+        "unit_number": 13,
+        "RUL": 95
+    },
+    {
+        "unit_number": 14,
+        "RUL": 107
+    },
+    {
+        "unit_number": 15,
+        "RUL": 83
+    },
+    {
+        "unit_number": 16,
+        "RUL": 84
+    },
+    {
+        "unit_number": 17,
+        "RUL": 50
+    },
+    {
+        "unit_number": 18,
+        "RUL": 28
+    },
+    {
+        "unit_number": 19,
+        "RUL": 87
+    },
+    {
+        "unit_number": 20,
+        "RUL": 16
+    },
+    {
+        "unit_number": 21,
+        "RUL": 57
+    },
+    {
+        "unit_number": 22,
+        "RUL": 111
+    },
+    {
+        "unit_number": 23,
+        "RUL": 113
+    },
+    {
+        "unit_number": 24,
+        "RUL": 20
+    },
+    {
+        "unit_number": 25,
+        "RUL": 145
+    },
+    {
+        "unit_number": 26,
+        "RUL": 119
+    },
+    {
+        "unit_number": 27,
+        "RUL": 66
+    },
+    {
+        "unit_number": 28,
+        "RUL": 97
+    },
+    {
+        "unit_number": 29,
+        "RUL": 90
+    },
+    {
+        "unit_number": 30,
+        "RUL": 115
+    },
+    {
+        "unit_number": 31,
+        "RUL": 8
+    },
+    {
+        "unit_number": 32,
+        "RUL": 48
+    },
+    {
+        "unit_number": 33,
+        "RUL": 106
+    },
+    {
+        "unit_number": 34,
+        "RUL": 7
+    },
+    {
+        "unit_number": 35,
+        "RUL": 11
+    },
+    {
+        "unit_number": 36,
+        "RUL": 19
+    },
+    {
+        "unit_number": 37,
+        "RUL": 21
+    },
+    {
+        "unit_number": 38,
+        "RUL": 50
+    },
+    {
+        "unit_number": 39,
+        "RUL": 142
+    },
+    {
+        "unit_number": 40,
+        "RUL": 28
+    },
+    {
+        "unit_number": 41,
+        "RUL": 18
+    },
+    {
+        "unit_number": 42,
+        "RUL": 10
+    },
+    {
+        "unit_number": 43,
+        "RUL": 59
+    },
+    {
+        "unit_number": 44,
+        "RUL": 109
+    },
+    {
+        "unit_number": 45,
+        "RUL": 114
+    },
+    {
+        "unit_number": 46,
+        "RUL": 47
+    },
+    {
+        "unit_number": 47,
+        "RUL": 135
+    },
+    {
+        "unit_number": 48,
+        "RUL": 92
+    },
+    {
+        "unit_number": 49,
+        "RUL": 21
+    },
+    {
+        "unit_number": 50,
+        "RUL": 79
+    },
+    {
+        "unit_number": 51,
+        "RUL": 114
+    },
+    {
+        "unit_number": 52,
+        "RUL": 29
+    },
+    {
+        "unit_number": 53,
+        "RUL": 26
+    },
+    {
+        "unit_number": 54,
+        "RUL": 97
+    },
+    {
+        "unit_number": 55,
+        "RUL": 137
+    },
+    {
+        "unit_number": 56,
+        "RUL": 15
+    },
+    {
+        "unit_number": 57,
+        "RUL": 103
+    },
+    {
+        "unit_number": 58,
+        "RUL": 37
+    },
+    {
+        "unit_number": 59,
+        "RUL": 114
+    },
+    {
+        "unit_number": 60,
+        "RUL": 100
+    },
+    {
+        "unit_number": 61,
+        "RUL": 21
+    },
+    {
+        "unit_number": 62,
+        "RUL": 54
+    },
+    {
+        "unit_number": 63,
+        "RUL": 72
+    },
+    {
+        "unit_number": 64,
+        "RUL": 28
+    },
+    {
+        "unit_number": 65,
+        "RUL": 128
+    },
+    {
+        "unit_number": 66,
+        "RUL": 14
+    },
+    {
+        "unit_number": 67,
+        "RUL": 77
+    },
+    {
+        "unit_number": 68,
+        "RUL": 8
+    },
+    {
+        "unit_number": 69,
+        "RUL": 121
+    },
+    {
+        "unit_number": 70,
+        "RUL": 94
+    },
+    {
+        "unit_number": 71,
+        "RUL": 118
+    },
+    {
+        "unit_number": 72,
+        "RUL": 50
+    },
+    {
+        "unit_number": 73,
+        "RUL": 131
+    },
+    {
+        "unit_number": 74,
+        "RUL": 126
+    },
+    {
+        "unit_number": 75,
+        "RUL": 113
+    },
+    {
+        "unit_number": 76,
+        "RUL": 10
+    },
+    {
+        "unit_number": 77,
+        "RUL": 34
+    },
+    {
+        "unit_number": 78,
+        "RUL": 107
+    },
+    {
+        "unit_number": 79,
+        "RUL": 63
+    },
+    {
+        "unit_number": 80,
+        "RUL": 90
+    },
+    {
+        "unit_number": 81,
+        "RUL": 8
+    },
+    {
+        "unit_number": 82,
+        "RUL": 9
+    },
+    {
+        "unit_number": 83,
+        "RUL": 137
+    },
+    {
+        "unit_number": 84,
+        "RUL": 58
+    },
+    {
+        "unit_number": 85,
+        "RUL": 118
+    },
+    {
+        "unit_number": 86,
+        "RUL": 89
+    },
+    {
+        "unit_number": 87,
+        "RUL": 116
+    },
+    {
+        "unit_number": 88,
+        "RUL": 115
+    },
+    {
+        "unit_number": 89,
+        "RUL": 136
+    },
+    {
+        "unit_number": 90,
+        "RUL": 28
+    },
+    {
+        "unit_number": 91,
+        "RUL": 38
+    },
+    {
+        "unit_number": 92,
+        "RUL": 20
+    },
+    {
+        "unit_number": 93,
+        "RUL": 85
+    },
+    {
+        "unit_number": 94,
+        "RUL": 55
+    },
+    {
+        "unit_number": 95,
+        "RUL": 128
+    },
+    {
+        "unit_number": 96,
+        "RUL": 137
+    },
+    {
+        "unit_number": 97,
+        "RUL": 82
+    },
+    {
+        "unit_number": 98,
+        "RUL": 59
+    },
+    {
+        "unit_number": 99,
+        "RUL": 117
+    },
+    {
+        "unit_number": 100,
+        "RUL": 20
+    }
+]

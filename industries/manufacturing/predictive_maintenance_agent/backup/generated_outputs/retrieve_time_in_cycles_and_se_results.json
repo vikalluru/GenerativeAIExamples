@@ -1,0 +1,734 @@
+[
+    {
+        "time_in_cycles": 1,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 2,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 3,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 4,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 5,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 6,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 7,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 8,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 9,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 10,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 11,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 12,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 13,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 14,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 15,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 16,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 17,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 18,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 19,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 20,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 21,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 22,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 23,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 24,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 25,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 26,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 27,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 28,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 29,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 30,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 31,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 32,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 33,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 34,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 35,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 36,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 37,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 38,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 39,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 40,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 41,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 42,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 43,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 44,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 45,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 46,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 47,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 48,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 49,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 50,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 51,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 52,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 53,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 54,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 55,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 56,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 57,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 58,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 59,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 60,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 61,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 62,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 63,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 64,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 65,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 66,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 67,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 68,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 69,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 70,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 71,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 72,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 73,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 74,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 75,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 76,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 77,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 78,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 79,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 80,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 81,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 82,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 83,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 84,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 85,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 86,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 87,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 88,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 89,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 90,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 91,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 92,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 93,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 94,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 95,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 96,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 97,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 98,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 99,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 100,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 101,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 102,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 103,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 104,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 105,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 106,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 107,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 108,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 109,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 110,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 111,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 112,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 113,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 114,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 115,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 116,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 117,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 118,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 119,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 120,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 121,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 122,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 123,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 124,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 125,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 126,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 127,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 128,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 129,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 130,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 131,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 132,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 133,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 134,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 135,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 136,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 137,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 138,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 139,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 140,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 141,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 142,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 143,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 144,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 145,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 146,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 147,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 148,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 149,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 150,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 151,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 152,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 153,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 154,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 155,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 156,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 157,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 158,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 159,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 160,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 161,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 162,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 163,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 164,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 165,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 166,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 167,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 168,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 169,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 170,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 171,
+        "sensor_measurement_1": 518.67
+    },
+    {
+        "time_in_cycles": 172,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 173,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 174,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 175,
+        "sensor_measurement_1": 462.54
+    },
+    {
+        "time_in_cycles": 176,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 177,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 178,
+        "sensor_measurement_1": 449.44
+    },
+    {
+        "time_in_cycles": 179,
+        "sensor_measurement_1": 489.05
+    },
+    {
+        "time_in_cycles": 180,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 181,
+        "sensor_measurement_1": 491.19
+    },
+    {
+        "time_in_cycles": 182,
+        "sensor_measurement_1": 445.0
+    },
+    {
+        "time_in_cycles": 183,
+        "sensor_measurement_1": 518.67
+    }
+]

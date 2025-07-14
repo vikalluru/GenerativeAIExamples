@@ -1,0 +1,4 @@
+Data Source,RUL Min,RUL Max,Pattern,Correct?
+Raw SQL Data,20,205,Linear Decline,✅ YES
+Your Plot Shows,~40,~125,Piecewise/Knee,❌ NO (Transformed)
+ML Predictions,34.9,124.0,ML Curve,✅ YES (Based on Raw Data)
