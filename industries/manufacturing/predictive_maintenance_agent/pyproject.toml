@@ -11,7 +11,7 @@ dependencies = [
   "vanna",
   "chromadb",
   "bokeh",
-  "langchain_nvidia",
+  # "langchain_nvidia",
   "tqdm",
   "numpy",
   "pandas",

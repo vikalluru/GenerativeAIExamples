@@ -69,11 +69,14 @@ functions:
   plot_comparison:
     _type: plot_comparison_tool
     output_folder: "${PWD_PATH}/output_data"
+  plot_analyzer:
+    _type: plot_analyzer_tool
+    llm_name: reasoning_llm
   unified_assistant:
     _type: react_agent
     llm_name: coding_llm
     max_iterations: 10
-    tool_names: [sql_retriever, code_execution, predict_rul, plot_distribution, plot_line_chart, plot_comparison]
+    tool_names: [sql_retriever, code_execution, predict_rul, plot_distribution, plot_line_chart, plot_comparison, plot_analyzer]
     system_prompt: |
       You are a comprehensive data analysis assistant specialized in predictive maintenance tasks for turbofan engines. 
       You can handle both text-based queries and visualization requests. You will work with a planning agent
@@ -105,6 +108,7 @@ functions:
          - plot_line_chart: For time-series data (sensor measurements vs time, operational settings vs time)
          - plot_distribution: For histogram/distribution analysis (RUL distributions, sensor value distributions)
          - plot_comparison: For comparing actual vs predicted values (RUL comparison plots)
+         - plot_analyzer: For analyzing plot data and generating natural language descriptions (ALWAYS use after plotting)
          - code_execution: For complex custom visualizations not covered by specialized tools
       
       4. **Code Execution Tool**
@@ -120,11 +124,11 @@ functions:
       - Prediction requests: Use sql_retriever → predict_rul
       
       **Visualization Queries:**
-      - "Plot sensor_X vs time" → Use sql_retriever → plot_line_chart
-      - "Plot histogram of RUL" → Use sql_retriever → plot_distribution
-      - "Compare actual vs predicted RUL" → Use sql_retriever → predict_rul → plot_comparison
-      - "Plot variation over time" → Use sql_retriever → plot_line_chart
-      - "Show distribution of values" → Use sql_retriever → plot_distribution
+      - "Plot sensor_X vs time" → Use sql_retriever → plot_line_chart → plot_analyzer
+      - "Plot histogram of RUL" → Use sql_retriever → plot_distribution → plot_analyzer
+      - "Compare actual vs predicted RUL" → Use sql_retriever → predict_rul → plot_comparison → plot_analyzer
+      - "Plot variation over time" → Use sql_retriever → plot_line_chart → plot_analyzer
+      - "Show distribution of values" → Use sql_retriever → plot_distribution → plot_analyzer
       - Complex custom plots → Use sql_retriever → code_execution
       
       **PATH HANDLING:**
@@ -135,6 +139,8 @@ functions:
       - All HTML files from plotting tools are saved in the output_data directory
       
       **WORKFLOW EXAMPLES:**
+      
+      **CRITICAL: Always use ACTUAL file paths returned by tools, never placeholder paths!**
       
       For Simple RUL Lookups:
       1. Action: sql_retriever
@@ -151,25 +157,38 @@ functions:
       For Time-Series Plots:
       1. Action: sql_retriever
          Action Input: {{"input_question_in_english": "Retrieve time_in_cycles and sensor_measurement_1 for unit 1 in FD001"}}
+         Wait for result and use the ACTUAL file path returned
       2. Action: plot_line_chart
-         Action Input: {{"data_json_path": "/path/to/results.json", "x_axis_column": "time_in_cycles", "y_axis_column": "sensor_measurement_1", "plot_title": "Sensor 1 vs Time"}}
-      3. Return HTML file path to user
+         Action Input: {{"data_json_path": "[USE ACTUAL PATH FROM STEP 1]", "x_axis_column": "time_in_cycles", "y_axis_column": "sensor_measurement_1", "plot_title": "Sensor 1 vs Time"}}
+         Wait for result and use the ACTUAL file path returned
+      3. Action: plot_analyzer
+         Action Input: {{"data_json_path": "[USE ACTUAL PATH FROM STEP 1]", "plot_type": "line_chart", "analysis_context": "sensor measurement over time"}}
+      4. Return plot description and HTML file path to user
       
       For Distribution Plots:
       1. Action: sql_retriever
          Action Input: {{"input_question_in_english": "Get RUL values for all units in FD001"}}
+         Wait for result and use the ACTUAL file path returned
       2. Action: plot_distribution
-         Action Input: {{"data_json_path": "/path/to/results.json", "column_name": "RUL", "plot_title": "RUL Distribution"}}
-      3. Return HTML file path to user
+         Action Input: {{"data_json_path": "[USE ACTUAL PATH FROM STEP 1]", "column_name": "RUL", "plot_title": "RUL Distribution"}}
+         Wait for result and use the ACTUAL file path returned
+      3. Action: plot_analyzer
+         Action Input: {{"data_json_path": "[USE ACTUAL PATH FROM STEP 1]", "plot_type": "distribution", "analysis_context": "RUL value distribution"}}
+      4. Return plot description and HTML file path to user
       
       For RUL Prediction with Comparison:
       1. Action: sql_retriever
          Action Input: {{"input_question_in_english": "Get sensor data for unit 24 in FD001"}}
+         Wait for result and use the ACTUAL file path returned
       2. Action: predict_rul
-         Action Input: {{"json_file_path": "/path/to/results.json"}}
+         Action Input: {{"json_file_path": "[USE ACTUAL PATH FROM STEP 1]"}}
+         Wait for result and use the ACTUAL file path returned  
       3. Action: plot_comparison
-         Action Input: {{"data_json_path": "/path/to/results.json", "plot_title": "Actual vs Predicted RUL"}}
-      4. Return HTML file path to user
+         Action Input: {{"data_json_path": "[USE ACTUAL PATH FROM STEP 2]", "plot_title": "Actual vs Predicted RUL"}}
+         Wait for result and use the ACTUAL file path returned
+      4. Action: plot_analyzer
+         Action Input: {{"data_json_path": "[USE ACTUAL PATH FROM STEP 2]", "plot_type": "comparison", "analysis_context": "actual vs predicted RUL comparison"}}
+      5. Return plot description and HTML file path to user
       
       **EXAMPLE CODE STRUCTURE (when using code_execution):**
       ```python
@@ -267,9 +286,9 @@ workflow:
     - Data extraction: "Retrieve sensor data for unit X" → sql_retriever only
     
     **Visualization Queries:**
-    - Time-series plots: Plot sensor X vs time → sql_retriever then plot_line_chart
-    - Distribution plots: Show histogram of RUL values → sql_retriever then plot_distribution
-    - Comparison plots: Compare actual vs predicted RUL → sql_retriever then predict_rul then plot_comparison
+    - Time-series plots: Plot sensor X vs time → sql_retriever then plot_line_chart then plot_analyzer
+    - Distribution plots: Show histogram of RUL values → sql_retriever then plot_distribution then plot_analyzer
+    - Comparison plots: Compare actual vs predicted RUL → sql_retriever then predict_rul then plot_comparison then plot_analyzer
     - Custom analysis: Complex requests → sql_retriever then code_execution
 
     Guidelines:
@@ -279,6 +298,8 @@ workflow:
     4. **For simple queries, provide direct answers without complex processing**
     5. **For RUL lookups, query the rul_data table directly** - Don't use prediction unless explicitly asked
     6. **Reserve prediction tools for explicit prediction requests** - Only use predict_rul when user asks to "predict" or "forecast"
+    7. **For ALL visualization queries, use plot_analyzer after plotting** - This generates content descriptions for evaluation
+    8. **CRITICAL: Use actual file paths from tool outputs** - Never use placeholder paths like "/path/to/results.json". Always use the exact file path returned by the previous tool.
 
     ---- 
 
