@@ -1,0 +1,76 @@
+[
+  {
+    "query": 1,
+    "status": "SUCCESS",
+    "plot_path": "golden_plot_generator/plots/query_1_golden_plot.html",
+    "data_points": 183,
+    "value_range": "445.00 - 518.67"
+  },
+  {
+    "query": 2,
+    "status": "SUCCESS",
+    "plot_path": "golden_plot_generator/plots/query_2_golden_plot.html",
+    "data_points": 183,
+    "value_range": "445.00 - 518.67"
+  },
+  {
+    "query": 3,
+    "status": "SUCCESS",
+    "plot_path": "golden_plot_generator/plots/query_3_golden_plot.html",
+    "data_points": 227,
+    "unique_values": [
+      60.0,
+      100.0
+    ],
+    "validation": "PASSED"
+  },
+  {
+    "query": 4,
+    "status": "SUCCESS",
+    "plot_path": "golden_plot_generator/plots/query_4_golden_plot.html",
+    "data_points": 227,
+    "unique_values": [
+      60.0,
+      100.0
+    ],
+    "value_counts": {
+      "60.0": 36,
+      "100.0": 191
+    }
+  },
+  {
+    "query": 5,
+    "status": "SUCCESS",
+    "plot_path": "golden_plot_generator/plots/query_5_golden_plot.html",
+    "data_points": 13096,
+    "unique_values": [
+      100.0
+    ],
+    "value_counts": {
+      "100.0": 13096
+    }
+  },
+  {
+    "query": 6,
+    "status": "SUCCESS",
+    "plot_path": "golden_plot_generator/plots/query_6_golden_plot.html",
+    "data_points": 652,
+    "units": [
+      "10",
+      "20",
+      "30",
+      "40"
+    ],
+    "unique_values": [
+      100.0
+    ]
+  },
+  {
+    "query": 7,
+    "status": "SUCCESS",
+    "plot_path": "golden_plot_generator/plots/query_7_golden_plot.html",
+    "data_points": 100,
+    "rul_range": "7 - 145",
+    "unique_values_count": 71
+  }
+]
