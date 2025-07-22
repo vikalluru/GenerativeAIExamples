@@ -53,9 +53,9 @@ async def generate_sql_query_and_retrieve_tool(
 
     Guidelines:
     - If results contain multiple rows or complex data (>5 rows or >3 columns): recommend saving to file
-    - If results are simple (single value, count, or small lookup): provide direct answer
+    - If results are simple (single value, count, or small lookup): provide direct answer WITHOUT mentioning files
     - Always mention the SQL query that was executed
-    - Be clear about whether data was saved to a file or not
+    - For simple queries: NEVER use words like 'file', 'save', 'saved', 'output', 'path' in your response
     - For files to be saved, suggest a descriptive filename based on the query content (e.g., "sensor_data_unit_5.json", "engine_performance_analysis.json")
     """
     
@@ -74,10 +74,18 @@ async def generate_sql_query_and_retrieve_tool(
     
     Please provide an appropriate response that either:
     1. Saves the data to JSON file and provides a summary (for complex/large datasets) - suggest a descriptive filename
-    2. Directly answers the question with the results (for simple queries)
+    2. Directly answers the question with the results (for simple queries - NO file creation)
     
-    Be conversational and helpful. Explain what was found and next steps if applicable.
-    If saving data, suggest a meaningful filename in the format: "descriptive_name.json"
+    For simple queries (1 row, 1 column): Just provide the answer. Do NOT mention files, saving, output paths, or filenames.
+    For complex queries: Suggest file creation and provide filename.
+    
+    CRITICAL INSTRUCTION: If the question asks for unit numbers or IDs (e.g., "what are their unit numbers"):
+    - Provide the COMPLETE list of ALL unit numbers from the data
+    - Never say "not shown in sample" or "additional values" 
+    - Extract all unit_number values from the complete dataset, not just the sample
+    - If you see unit numbers 40, 82, 174, 184 in the data, list ALL of them explicitly
+    
+    Be conversational and helpful. Explain what was found.
     
     Important: Do not use template variables or placeholders in your response. Provide actual values and descriptions.
     """
@@ -85,67 +93,44 @@ async def generate_sql_query_and_retrieve_tool(
     prompt = ChatPromptTemplate.from_messages([("system", system_prompt), ("user", user_prompt)])
     output_message = prompt | llm
     
-    from .vanna_util import NIMVanna, initVanna, CustomEmbeddingFunction
-    def get_vanna_instance(vanna_llm_config, vanna_embedder_config, vector_store_path, db_path):
+    from .vanna_manager import VannaManager
+    
+    # Create a VannaManager instance for this configuration
+    config_key = f"{config.vector_store_path}_{config.db_path}"
+    vanna_manager = VannaManager(config_key)
+    
+    def get_vanna_instance():
         """
-        Get a Vanna instance for the given configuration.
-        Initializes the Vanna instance if it is not already initialized.
-
-        Args:
-            vanna_llm_config (dict): The configuration for the Vanna LLM.
-            vanna_embedder_config (dict): The configuration for the Vanna embedder.
-            vector_store_path (str): The path to the vector store.
-            db_path (str): The path to the SQL database.
-
-        Returns:
-            NIMVanna: A Vanna instance.
-        """  
-        vn_instance = NIMVanna(
-            VectorConfig={
-                "client": "persistent",
-                "path": vector_store_path,
-                "embedding_function": CustomEmbeddingFunction(
-                    api_key=os.getenv("NVIDIA_API_KEY"), 
-                    model=vanna_embedder_config.model_name)
-            },
-            LLMConfig={
-                "api_key": os.getenv("NVIDIA_API_KEY"),
-                "model": vanna_llm_config.model_name
-            }
+        Get a clean Vanna instance through the VannaManager.
+        This ensures proper contamination prevention.
+        """
+        return vanna_manager.get_instance(
+            vanna_llm_config, 
+            vanna_embedder_config, 
+            config.vector_store_path, 
+            config.db_path
         )
 
-        # Connect to SQLite database
-        vn_instance.connect_to_sqlite(db_path)
-
-        # Check if vector store directory is empty and initialize if needed
-        list_of_folders = [d for d in os.listdir(vector_store_path) 
-                        if os.path.isdir(os.path.join(vector_store_path, d))]
-        if len(list_of_folders) == 0:
-            logger.info("Initializing Vanna vector store...")
-            try:
-                initVanna(vn_instance)
-                logger.info("Vanna vector store initialization complete.")
-            except Exception as e:
-                logger.error(f"Error initializing Vanna vector store: {e}")
-                raise
-        else:
-            logger.info("Vanna vector store already initialized.")
-        return vn_instance
-        
-    vn_instance = get_vanna_instance(vanna_llm_config, vanna_embedder_config, config.vector_store_path, config.db_path)
-
     async def _response_fn(input_question_in_english: str) -> str:
-        # Process the input_question_in_english and generate output
-        if vn_instance is None:
-            return "Error: Vanna instance not available"
+        # Process the input_question_in_english and generate output using VannaManager
+        logger.info(f"RESPONSE: Starting question processing for: {input_question_in_english}")
         
         sql = None
         try:
-            sql = vn_instance.generate_sql(question=input_question_in_english)
+            # CRITICAL: Ensure VannaManager instance is created before using it
+            # This creates the instance if it doesn't exist (lazy initialization)
+            vn_instance = get_vanna_instance()
+            
+            # Use VannaManager for safe SQL generation
+            sql = vanna_manager.generate_sql_safe(question=input_question_in_english)
             logger.info(f"Generated SQL: {sql}")
+            
         except Exception as e:
+            logger.error(f"RESPONSE: Exception during generate_sql_safe: {e}")
             return f"Error generating SQL: {e}"
 
+        # vn_instance is already available from above
+        
         if not vn_instance.run_sql_is_set:
             return f"Database is not connected via Vanna: {sql}"
 
