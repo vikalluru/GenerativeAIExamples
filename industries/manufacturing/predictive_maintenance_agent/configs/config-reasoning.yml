@@ -34,7 +34,7 @@ functions:
     llm_name: sql_llm
     embedding_name: vanna_embedder
     vector_store_path: "${PWD_PATH}/database"
-    db_path: "${PWD_PATH}/database/nasa_turbo.db"
+    db_path: "${PWD_PATH}/data/nasa_turbo.db"
     output_folder: "${PWD_PATH}/output_data"
   predict_rul:
     _type: predict_rul_tool
@@ -205,3 +205,48 @@ workflow:
     4. Return the final result
 
     **PLAN:**
+eval:
+  general:
+    output:
+      dir: "${PWD_PATH}/eval_output"
+      cleanup: true
+    dataset:
+      _type: json
+      file_path: "${PWD_PATH}/eval_data/eval_set_master.json"
+    # Add delays to prevent rate limiting
+    query_delay: 2  # seconds between queries
+    max_concurrent: 1  # process queries sequentially
+    profiler:
+      # Compute inter query token uniqueness
+      token_uniqueness_forecast: true
+      # Compute expected workflow runtime
+      workflow_runtime_forecast: true
+      # Compute inference optimization metrics
+      compute_llm_metrics: true
+      # Avoid dumping large text into the output CSV (helpful to not break structure)
+      csv_exclude_io_text: true
+      # Idenitfy common prompt prefixes
+      prompt_caching_prefixes:
+        enable: true
+        min_frequency: 0.1
+      bottleneck_analysis:
+        # Can also be simple_stack
+        enable_nested_stack: true
+      concurrency_spike_analysis:
+        enable: true
+        spike_threshold: 7
+
+  evaluators:
+    rag_accuracy:
+      _type: ragas
+      metric: AnswerAccuracy
+      llm_name: reasoning_llm
+    rag_groundedness:
+      _type: ragas
+      metric: ResponseGroundedness
+      llm_name: reasoning_llm
+    rag_relevance:
+      _type: ragas
+      metric: ContextRelevance
+      llm_name: reasoning_llm 
+  
