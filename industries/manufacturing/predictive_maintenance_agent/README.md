@@ -234,6 +234,60 @@ With Catalyst:
 Follow instructions [here](https://github.com/NVIDIA/NeMo-Agent-Toolkit/blob/develop/docs/source/workflows/observe/observe-workflow-with-catalyst.md) to setup RAGA AI profile
 and setup secrets.
 
+## Evaluation
+
+### Configuration
+There are two types of evaluation configs available
+
+```bash
+# Default full evaluation (querying+plotting) (23 queries)
+aiq eval --config_file configs/config-reasoning.yml
+
+# Basic evaluation for testing (16 simple queries)
+aiq eval --config_file configs/config-reasoning.yml --dataset eval_data/eval_set_simple.json
+```
+
+### Evaluation Datasets
+- **Template Dataset** (`eval_data/eval_set.json`): **16 simple queries** for quick testing
+- **Master Dataset** (`eval_data/eval_set_master.json`): **23 text+plotting queries** for full evaluation
+
+The master evaluation dataset contains **23 diverse queries**:
+- **16 Text Queries**: Simple lookups, aggregations, and predictions
+- **7 Visualization Queries**: Time-series plots, distributions, and comparisons
+
+### Query Categories
+- **Simple Lookups** (6 queries): Direct database retrieval
+- **Aggregation** (2 queries): Count and summary operations  
+- **Prediction** (8 queries): ML-based RUL predictions
+- **Time-Series Plots** (4 queries): Sensor data over time
+- **Distribution Plots** (3 queries): Histograms and value distributions
+
+### Evaluation Metrics
+The system evaluates performance using three RAGAS metrics:
+- **RAG Accuracy**: Factual correctness of responses
+- **RAG Groundedness**: Response grounding in retrieved context
+- **RAG Relevance**: Context relevance to user queries
+
+### Results Location
+After evaluation, detailed results are available in:
+- `eval_output/rag_accuracy_output.json` - Answer accuracy scores
+- `eval_output/rag_groundedness_output.json` - Response grounding metrics  
+- `eval_output/rag_relevance_output.json` - Context relevance scores
+- `eval_output/workflow_profiling_report.txt` - Performance analysis
+
+### Eval Results Summary
+We largely achieve very good semantic and factual accuracy for the small eval set in the eval_set_master.json. Some issues that we observed pertained to predictive model accuracy, inconsistent API call reliability, both of which are unrelated to the agentic framework itself.
+
+## Notes
+
+### File Organization
+- **Active Config**: `configs/config-reasoning.yml` (unified master configuration)
+- **Evaluation Data**: 
+  - `eval_data/eval_set.json` (16-query template for quick testing)
+  - `eval_data/eval_set_master.json` (23-query full evaluation)
+- **Generated Outputs**: `eval_output/` and `output_data/` for system outputs
+
+
 and then 
 
 ## Next Steps
