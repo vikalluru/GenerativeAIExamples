@@ -1,0 +1,79 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# AIQ Toolkit UI (embedded git repository)
+AIQToolkit-UI/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Environment variables
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local backup files (for local consumption only)
+backup/
+../backup/
+../../backup/
+../../../backup/
+
+# Generated output files (except .gitkeep)
+output_data/*
+!output_data/.gitkeep
+eval_output/*
+!eval_output/.gitkeep
+
+# Database files and dynamic folders
+database/*/
+!database/.gitkeep
+database_backup*/
+*.sqlite3
+*.db
+*.log
+
+# Temporary and debug files
+debug_*.py
+test_*.py
+analyze_*.py
+*_temp.py
+*.tmp
+*.temp 

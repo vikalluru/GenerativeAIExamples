@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: predictive_maintenance_agent
+Version: 0.1.0
+Summary: Predictive maintenance workflow using AIQ
+Author: Vineeth Kalluru
+Maintainer: NVIDIA Corporation
+Classifier: Programming Language :: Python
+Requires-Python: <3.13,>=3.11
+Requires-Dist: aiqtoolkit[langchain,profiling,telemetry]
+Requires-Dist: pydantic<2.11.0,~=2.10.0
